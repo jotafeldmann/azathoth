@@ -14,3 +14,8 @@ Create an API to enable system users to upload and retrieve images securely prov
 - The deliverable must be something you consider production ready (whatever this means to you. Again the most important thing will be why you made each design/implementation decision)
 - Finally, create a github repo with your project and share it with us as soon as you finish it.
 - The final deadline for this deliver is September 15th 23:59 (BRT) 
+
+
+## Improvements
+
+- Use a [TLS termination proxy on DMZ](https://en.wikipedia.org/wiki/TLS_termination_proxy) (maybe Nginx) due to Node.js and HTTPS/TLS crypto performance issues

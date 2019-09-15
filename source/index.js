@@ -8,9 +8,12 @@ const { mode, ...params } = cliParams
 
 console.log({ cliParams })
 
+const interfaceInstance = (
+    mode === 'http'
+    ? httpInterface
+    : cliInterface)
+
 Persistence
 .init()
-.then(() => {
-    if (mode === 'http') return httpInterface.init(params)
-    return cliInterface.init(params)
-})
+.then(() => interfaceInstance.init(params))
+.catch(err => interfaceInstance.errorFlow(err))

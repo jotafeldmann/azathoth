@@ -6,7 +6,7 @@ import { errorHandler } from './errorHandler'
 
 const defaultPort = 3000
 
-const successStart = ({ port }) => console.log(`Listening on ${port}`)
+const successStart = ({ port }) => console.log(`HTTP: listening on ${port}`)
 
 const httpController = ({ lambda, successStatusCode, errorStatusCode  }) => (httpRequistionInstance, httpResponseInstance) => {
     const { body, query } = httpRequistionInstance

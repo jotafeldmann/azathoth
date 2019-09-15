@@ -65,8 +65,8 @@ export class Interface {
     }
 
     errorFlow (error) {
-        const { message, code } = error
-        this.errorLambda({ message, code, details: error })
+        const { message, code, ...details } = error
+        this.errorLambda({ message, code, details })
     }
 
     getControllers () {

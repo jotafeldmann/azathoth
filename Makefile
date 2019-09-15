@@ -2,7 +2,7 @@ args = ''
 gotoSource = cd source
 .PHONY: dev
 dev:
-	$(gotoSource) && npm run dev
+	$(gotoSource) && npm run dev $(args)
 
 .PHONY: cli
 cli:
@@ -10,11 +10,11 @@ cli:
 
 .PHONY: cli/test
 cli/test:
-	make cli args='domain=user action=create login=abc'
+	make cli args='domain=user action=create login=abc password=123' $(args)
 
 .PHONY: cli/test/error
 cli/test/error:
-	make cli args='domain=user action=create login=ac'
+	make cli args='domain=user action=create login=ac' $(args)
 
 .PHONY: cli/watch
 cli/watch:
@@ -23,11 +23,11 @@ cli/watch:
 
 .PHONY: http
 http:
-	$(gotoSource) && npm run dev 'mode=http'
+	$(gotoSource) && npm run dev 'mode=http' $(args)
 
 .PHONY: http/test
 http/test:
-	curl -v -d '{"login":"blafadfa", "password":"blafadfa"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
+	curl -v -d '{"login":"blafadfa", "password":"123"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
 
 .PHONY: http/test/error
 http/test/error:

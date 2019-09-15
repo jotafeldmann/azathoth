@@ -16,7 +16,7 @@ const cliInterface = new Interface({
     },
     errorLambda ({ code, message }) {
         const errorMessage = `${code}: ${message}`
-        throw new Error (errorMessage)
+        console.error(errorMessage)
     }
 })
 

@@ -37,12 +37,9 @@ export class Interface {
         this.errorLambda = errorLambda
     }
 
-    init () {
+    init (params) {
         try {
-            this.initLambda()
-            const inputResponse = this.input()
-            const processResponse = this.process(inputResponse)
-            return this.output(processResponse)
+            return this.initLambda(params)
         } catch (error) {
             if (error instanceof InterfaceError) {
                 return this.errorFlow(error)
@@ -55,18 +52,23 @@ export class Interface {
         return this.inputLambda(rawData)
     }
 
-    process ({ action, domain, data }) {
+    process ({ action, domain, data } = {}) {
         const controller = getControllerByDomain({ domain })
         const selectedAction = getActionByController({ controller, action })
         return selectedAction(data)
     }
 
-    output ({ data }) {
-        return this.outputLambda({ data })
+    output ({ error, data }) {
+        if (error) return this.errorFlow(error)
+        return this.outputLambda(data)
     }
 
     errorFlow (error) {
         const { message, code } = error
         this.errorLambda({ message, code, details: error })
+    }
+
+    getControllers () {
+        return Controllers
     }
 }

@@ -1,14 +1,3 @@
-exports.handler = async (event) => {
-    return sendRes(200,'Hello');
-};
+import { createUser } from './app/controllers/createUser'
 
-const sendRes = (status, body) => {
-  var response = {
-    statusCode: status,
-    headers: {
-      "Content-Type": "text/html"
-    },
-    body: body
-  };
-  return response;
-};
+console.log(createUser({ login: 'fasdfasda' }))

@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon -r esm --inspect=0.0.0.0:9222 --nolazy --use_strict $npm_package_main",
+    "start": "node --experimental-modules index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jota Feldmann",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/joi": "^16.0.1",
+    "esm": "^3.2.25"
+  },
   "devDependencies": {
-    "serverless": "^1.51.0"
+    "nodemon": "^1.19.2"
   }
 }

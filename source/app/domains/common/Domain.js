@@ -38,7 +38,9 @@ const Domain = function (nameSpace, mapAttribuesToValidations) {
         instance.getModel = () => model()
 
         instance.save = () => {
-            this.getModel().create()
+            this.getModel().create(this)
+            .then(success => console.log(success))
+            .catch(error => console.error(error))
         }
 
         return instance

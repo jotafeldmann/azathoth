@@ -34,7 +34,7 @@ const initializeModels = () =>
 const initializePersistence = async () => {
     await persistenceInstance.queryInterface.createTable('Users', {
         id: {
-          allowNull: true,
+          allowNull: false,
           autoIncrement: true,
           primaryKey: true,
           type: DataTypes.INTEGER,
@@ -48,11 +48,11 @@ const initializePersistence = async () => {
           type: DataTypes.STRING,
         },
         createdAt: {
-            allowNull: true,
+            allowNull: false,
             type: DataTypes.DATE,
         },
         updatedAt: {
-            allowNull: true,
+            allowNull: false,
             type: DataTypes.DATE,
         },
     })
@@ -95,7 +95,7 @@ const mapJoiValidationsToSequelizeDefinitions = (joiValidations) =>
 export const registerModel = function (nameSpace, mapAttribuesToValidations) {
     const validations = mapJoiValidationsToSequelizeDefinitions(mapAttribuesToValidations)
     const validationsObject = fromListGenerateMap(validations)
-    models[nameSpace] = {}
+    models[nameSpace] = validationsObject
     mapOfModelsToInitialize[nameSpace] = models[nameSpace]
     const model = () => models[nameSpace]
     return model

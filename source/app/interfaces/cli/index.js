@@ -1,5 +1,5 @@
 import { get } from 'cli-parameter-getter'
-import { Interface } from './common/Interface'
+import { Interface } from '../common/Interface'
 
 const cliInterface = new Interface({
     inputLambda() {

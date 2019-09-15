@@ -17,7 +17,9 @@
     "@hapi/joi": "^16.0.1",
     "cli-parameter-getter": "^1.0.7",
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "helmet": "^3.21.0",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"

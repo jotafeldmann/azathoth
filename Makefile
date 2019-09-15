@@ -27,7 +27,7 @@ http:
 
 .PHONY: http/test
 http/test:
-	curl -v -d '{"login":"blafadfa"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
+	curl -v -d '{"login":"blafadfa", "password":"blafadfa"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
 
 .PHONY: http/test/error
 http/test/error:

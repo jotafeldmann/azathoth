@@ -6,7 +6,7 @@ class InterfaceError extends ExpectedError {}
 const getControllerByDomain = ({ domain }) => {
     if (!domain) throw new InterfaceError (
         EXPECTED_ERROR_CODE_ENUM.INPUT_ERROR,
-        'Domain is empty'
+        'Domain cant be empty'
         )
     const controller = Controllers[domain]
     if (!controller) throw new InterfaceError (
@@ -19,7 +19,7 @@ const getControllerByDomain = ({ domain }) => {
 const getActionByController = ({ controller, action }) => {
     if (!action) throw new InterfaceError (
         EXPECTED_ERROR_CODE_ENUM.INPUT_ERROR,
-        'Action is empty'
+        'Action cant be empty'
         )
     const selectedAction = controller[action]
     if (!selectedAction) throw new InterfaceError (
@@ -37,7 +37,7 @@ export class Interface {
         this.errorLambda = errorLambda
     }
 
-    init (params) {
+    init (params = {}) {
         try {
             return this.initLambda(params)
         } catch (error) {

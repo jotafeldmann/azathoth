@@ -1,4 +1,5 @@
 import express from 'express'
+import helmet from 'helmet'
 import { forEachPropertyOfObject } from '../../common/Utils'
 import { ACTIONS_TO_HTTP, HTTP_STATUS_CODE_ENUM } from './constants'
 import { errorHandler } from './errorHandler'
@@ -34,5 +35,6 @@ export const start = ({ config, controllers }) => {
     const app = express()
     app.listen(config, () => successStart(config))
     app.use(express.json())
+    app.use(helmet())
     mapDomainsToHttpRoutes({ app, controllers, httpController })
 }

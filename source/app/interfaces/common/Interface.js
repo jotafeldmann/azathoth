@@ -39,6 +39,7 @@ export class Interface {
 
     init (params = {}) {
         try {
+            console.log('APP: interface init')
             return this.initLambda(params)
         } catch (error) {
             if (error instanceof InterfaceError) {

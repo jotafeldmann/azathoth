@@ -4,6 +4,8 @@ import { forEachPropertyOfObject } from '../../common/Utils'
 import { ACTIONS_TO_HTTP, HTTP_STATUS_CODE_ENUM } from './constants'
 import { errorHandler } from './errorHandler'
 
+const defaultPort = 3000
+
 const successStart = ({ port }) => console.log(`Listening on ${port}`)
 
 const httpController = ({ lambda, successStatusCode, errorStatusCode  }) => (httpRequistionInstance, httpResponseInstance) => {
@@ -33,7 +35,8 @@ const mapDomainsToHttpRoutes = ({ app, controllers, httpController }) =>
 
 export const start = ({ config, controllers }) => {
     const app = express()
-    app.listen(config, () => successStart(config))
+    const { port = defaultPort } = config
+    app.listen(port, () => successStart({ port }))
     app.use(express.json())
     app.use(helmet())
     mapDomainsToHttpRoutes({ app, controllers, httpController })

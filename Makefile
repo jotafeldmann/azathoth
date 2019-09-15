@@ -7,7 +7,7 @@ cli:
 
 .PHONY: cli/test
 cli/test:
-	make cli args='domain=user action=create login=abc password=123' $(args)
+	make cli args='domain=user action=create login=abc password=123'
 
 .PHONY: cli/test/error
 cli/test/error:

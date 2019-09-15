@@ -25,20 +25,26 @@ const validateValueAgainstValidation = ({ attributeName, value, validation }) =>
 }
 
 const Domain = function (nameSpace, mapAttribuesToValidations) {
-
     const model = registerModel(nameSpace, mapAttribuesToValidations)
-
-    return function (values) {
-        this.model = model
+    const instanceFunction = function (values) {
         const instance = this
         forEachPropertyOfObject(mapAttribuesToValidations, attributeName => {
-            let validation = mapAttribuesToValidations[attributeName]
+            let { validation } = mapAttribuesToValidations[attributeName]
             let value = values[attributeName]
             validateValueAgainstValidation({ attributeName, value, validation })
             setAttributesValuesToInstance({ instance, attributeName, value })
         })
+
+        instance.getModel = () => model()
+
+        instance.save = () => {
+            this.getModel().create()
+        }
+
         return instance
     }
+
+    return instanceFunction
 }
 
 Domain.typesValidator = Joi

@@ -10,13 +10,14 @@ class PersistenceError extends ExpectedError {
 
 let initialized = false
 let persistenceInstance = {}
-let mapOfModelsToInitialize = {}
+const mapOfModelsToInitialize = {}
 const isModuleInitialized = () => initialized
+
+const models = {}
 
 export const testConnection = () => persistenceInstance
     .authenticate()
     .then(() => {
-        initialized = true
         console.log('Connection has been established successfully.')
         console.log('APP: persistence init')
     })
@@ -25,12 +26,49 @@ export const testConnection = () => persistenceInstance
         err,
     ))
 
+const initializeModels = () =>
+    forEachPropertyOfObject(mapOfModelsToInitialize, ( modelName, model ) => {
+        models[modelName] = persistenceInstance.define(modelName, model)
+    })
+
+const initializePersistence = async () => {
+    await persistenceInstance.queryInterface.createTable('Users', {
+        id: {
+          allowNull: true,
+          autoIncrement: true,
+          primaryKey: true,
+          type: DataTypes.INTEGER,
+        },
+        login: {
+          allowNull: false,
+          type: DataTypes.STRING,
+        },
+        password: {
+          allowNull: false,
+          type: DataTypes.STRING,
+        },
+        createdAt: {
+            allowNull: true,
+            type: DataTypes.DATE,
+        },
+        updatedAt: {
+            allowNull: true,
+            type: DataTypes.DATE,
+        },
+    })
+    await persistenceInstance.sync({ force:true })
+}
+
 export const init = () => {
     if (isModuleInitialized()) return false
     persistenceInstance = new Sequelize('database', 'username', 'password', {
         dialect: 'sqlite',
         storage: ':memory:',
     })
+    
+    initializePersistence()
+    initializeModels()
+    initialized = true
     return testConnection()
 }
 
@@ -57,5 +95,8 @@ const mapJoiValidationsToSequelizeDefinitions = (joiValidations) =>
 export const registerModel = function (nameSpace, mapAttribuesToValidations) {
     const validations = mapJoiValidationsToSequelizeDefinitions(mapAttribuesToValidations)
     const validationsObject = fromListGenerateMap(validations)
-    return mapOfModelsToInitialize[nameSpace] = validationsObject
+    models[nameSpace] = {}
+    mapOfModelsToInitialize[nameSpace] = models[nameSpace]
+    const model = () => models[nameSpace]
+    return model
 }

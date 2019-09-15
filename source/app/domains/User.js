@@ -1,8 +1,4 @@
-import { Sequelize, DataTypes} from 'sequelize'
 import { Domain } from './common/Domain'
-
-
-
 
 const model = {
     login: {

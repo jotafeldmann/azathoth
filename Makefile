@@ -1,9 +1,9 @@
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
-
+gotoSource = cd source
 .PHONY: dev
 dev:
-	cd source && npm run dev
+	$(gotoSource) && npm run dev
 
 .PHONY: npm
 npm:
-	cd source && npm $(call args,defaultstring)
+	$(gotoSource) && npm $(call args,defaultstring)

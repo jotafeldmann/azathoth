@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon -r esm --inspect=0.0.0.0:9222 --nolazy --use_strict $npm_package_main",
-    "start": "node --experimental-modules index.js",
+    "start": "node --experimental-modules $npm_package_main",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jota Feldmann",

@@ -19,7 +19,9 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "helmet": "^3.21.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "sequelize": "^5.18.4",
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.2"

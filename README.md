@@ -15,6 +15,26 @@ Create an API to enable system users to upload and retrieve images securely prov
 - Finally, create a github repo with your project and share it with us as soon as you finish it.
 - The final deadline for this deliver is September 15th 23:59 (BRT) 
 
+## Instalation
+
+- [Install GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Install NPM and Node](https://nodejs.org/en/download/)
+- [Clone the repo](https://help.github.com/en/articles/which-remote-url-should-i-use): `git clone https://github.com/jotafeldmann/lovecraft.git`
+- `cd lovecraft`
+- `make install`
+
+## How to dev
+
+- `make dev`
+
+## How to use
+
+- Check the Makefile for tasks
+
+- Check interfaces
+  - [HTTP](./source/app/interfaces/http/README.md)
+  - [CLI](./source/app/interfaces/cli/README.md)
+
 
 ## Improvements
 

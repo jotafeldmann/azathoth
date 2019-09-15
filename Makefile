@@ -1,8 +1,5 @@
 args = ''
 gotoSource = cd source
-.PHONY: dev
-dev:
-	$(gotoSource) && npm run dev $(args)
 
 .PHONY: cli
 cli:
@@ -20,6 +17,9 @@ cli/test/error:
 cli/watch:
 	$(gotoSource) && npm run dev $(args)
 
+.PHONY: dev
+dev:
+	make http
 
 .PHONY: http
 http:
@@ -33,6 +33,9 @@ http/test:
 http/test/error:
 	curl -v -d '{"login":"blaf adfa"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
 
+.PHONY: install
+install:
+	$(gotoSource) && npm install
 
 .PHONY: npm
 npm:

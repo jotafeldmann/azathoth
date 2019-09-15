@@ -32,4 +32,5 @@ export const init = () => {
 
 export const save = ({ modelWithData, howToSave }) => {
     if (!isModuleInitialized()) throw new PersistenceError('Persistence not initialized')
+    console.log(modelWithData)
 }

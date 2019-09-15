@@ -2,7 +2,11 @@ import Joi from '@hapi/joi'
 import { ExpectedError, EXPECTED_ERROR_CODE_ENUM } from '../../common/ExpectedError'
 import { forEachPropertyOfObject } from '../../common/Utils'
 
-class DomainError extends ExpectedError {}
+class DomainError extends ExpectedError {
+    constructor(message, details) {
+        super('DOMAIN_ERROR', message, details)
+    }
+}
 
 class Domain {
     constructor(mapAttribuesToValidations = { attributeName: { value, validation } }) {

@@ -45,7 +45,7 @@ export class Interface {
             if (error instanceof InterfaceError) {
                 return this.errorFlow(error)
             }
-            throw new Error(error)
+            console.error(error)
         }
     }
 

@@ -7,12 +7,12 @@ class PersistenceError extends ExpectedError {
     }
 }
 
-export const Persistence = {
-    initialized: false,
-}
+let initialized = false
 
-Persistence.init = () => {
-    if (Persistence.initialized) return false
+const isModuleInitialized = () => initialized
+
+export const init = () => {
+    if (isModuleInitialized()) return false
     const sequelize = new Sequelize('database', 'username', 'password', {
         dialect: 'sqlite',
         storage: ':memory:',
@@ -20,7 +20,7 @@ Persistence.init = () => {
     return sequelize
         .authenticate()
         .then(() => {
-            Persistence. initialized = true
+            initialized = true
             console.log('Connection has been established successfully.')
             console.log('APP: persistence init')
         })
@@ -28,5 +28,8 @@ Persistence.init = () => {
             'Unable to connect to the database',
             err,
         ))
-        
+}
+
+export const save = ({ modelWithData, howToSave }) => {
+    if (!isModuleInitialized()) throw new PersistenceError('Persistence not initialized')
 }

@@ -1,2 +1,4 @@
+export const iterateObject = obj => Object.keys(obj)
+
 export const forEachPropertyOfObject = (obj, lambda) => 
-    Object.keys(obj).map(lambda)
+iterateObject(obj).map(lambda)

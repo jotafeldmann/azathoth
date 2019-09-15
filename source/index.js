@@ -1,3 +1,3 @@
-import { createUser } from './app/controllers/createUser'
+import cliInterface from './app/interfaces/cli'
 
-console.log(createUser({ login: 'fasdfasda' }))
+cliInterface.init({ process: process })

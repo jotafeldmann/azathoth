@@ -9,4 +9,6 @@ export class ExpectedError extends Error {
 
 export const EXPECTED_ERROR_CODE_ENUM = Object.freeze({
     VALIDATION_ERROR: 'VALIDATION_ERROR',
+    NOT_FOUND: 'NOT_FOUND',
+    INPUT_ERROR: 'INPUT_ERROR',
 })

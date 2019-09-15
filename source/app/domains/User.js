@@ -1,11 +1,11 @@
-import { Entity } from './common/Entity'
+import { Domain } from './common/Domain'
 
-export class User extends Entity {
+export class User extends Domain {
     constructor({ login = '' }) {
         super({
             login: {
                 value: login,
-                validation: Entity.typesValidator
+                validation: Domain.typesValidator
                 .string()
                 .alphanum()
                 .min(3)

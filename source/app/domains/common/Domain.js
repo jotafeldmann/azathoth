@@ -1,19 +1,15 @@
 import Joi from '@hapi/joi'
-import { ExpectedError, EXPECTED_ERROR_CODE_ENUM } from '../../../common/ExpectedError'
-import { forEachPropertyOfObject } from '../../../common/Utils'
+import { ExpectedError, EXPECTED_ERROR_CODE_ENUM } from '../../common/ExpectedError'
+import { forEachPropertyOfObject } from '../../common/Utils'
 
-class EntityError extends ExpectedError {}
+class DomainError extends ExpectedError {}
 
-class Entity {
+class Domain {
     constructor(mapAttribuesToValidations = { attributeName: { value, validation } }) {
-        this._ = {
-            validations: {}
-        }
         forEachPropertyOfObject(mapAttribuesToValidations, attributeName => {
             let attribute = mapAttribuesToValidations[attributeName]
             this.validateValueAgainstValidation({ attributeName, ...attribute })
             this.setAttributesValuesToInstance({ attributeName, ...attribute })
-            this._.validations[attributeName] = attribute.validation
         })
     }
 
@@ -21,7 +17,7 @@ class Entity {
         try {
             return Joi.assert(value, validation)
         } catch ({ message }) {
-            throw new EntityError(EXPECTED_ERROR_CODE_ENUM.VALIDATION_ERROR, `\Attribute "${attributeName}\": ${message}`)
+            throw new DomainError(EXPECTED_ERROR_CODE_ENUM.VALIDATION_ERROR, `\Attribute "${attributeName}\": ${message}`)
         }
     }
 
@@ -35,8 +31,8 @@ class Entity {
     }
 } 
 
-Entity.typesValidator = Joi
+Domain.typesValidator = Joi
 
 export {
-    Entity
+    Domain
 }

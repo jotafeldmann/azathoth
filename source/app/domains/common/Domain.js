@@ -1,6 +1,7 @@
 import Joi from '@hapi/joi'
 import { ExpectedError, EXPECTED_ERROR_CODE_ENUM } from '../../common/ExpectedError'
 import { forEachPropertyOfObject } from '../../common/Utils'
+import { registerModel } from '../../persistence'
 
 class DomainError extends ExpectedError {
     constructor(message, details) {
@@ -8,32 +9,37 @@ class DomainError extends ExpectedError {
     }
 }
 
-class Domain {
-    constructor(mapAttribuesToValidations = { attributeName: { value, validation } }) {
+const setAttributesValuesToInstance = ({ instance, attributeName, value }) => {
+    instance [attributeName] = (value === undefined
+        ? null
+        : value)
+    return instance
+}
+
+const validateValueAgainstValidation = ({ attributeName, value, validation }) => {
+    try {
+        return Joi.assert(value, validation)
+    } catch ({ message }) {
+        throw new DomainError(EXPECTED_ERROR_CODE_ENUM.VALIDATION_ERROR, `\Attribute "${attributeName}\": ${message}`)
+    }
+}
+
+const Domain = function (nameSpace, mapAttribuesToValidations) {
+
+    const model = registerModel(nameSpace, mapAttribuesToValidations)
+
+    return function (values) {
+        this.model = model
+        const instance = this
         forEachPropertyOfObject(mapAttribuesToValidations, attributeName => {
-            let attribute = mapAttribuesToValidations[attributeName]
-            this.validateValueAgainstValidation({ attributeName, ...attribute })
-            this.setAttributesValuesToInstance({ attributeName, ...attribute })
+            let validation = mapAttribuesToValidations[attributeName]
+            let value = values[attributeName]
+            validateValueAgainstValidation({ attributeName, value, validation })
+            setAttributesValuesToInstance({ instance, attributeName, value })
         })
+        return instance
     }
-
-    validateValueAgainstValidation ({ attributeName, value, validation }) {
-        try {
-            return Joi.assert(value, validation)
-        } catch ({ message }) {
-            throw new DomainError(EXPECTED_ERROR_CODE_ENUM.VALIDATION_ERROR, `\Attribute "${attributeName}\": ${message}`)
-        }
-    }
-
-    setAttributesValuesToInstance ({ attributeName, value }) {
-        this[attributeName] = (value === undefined
-            ? null
-            : value)
-        return {
-            [attributeName]: value
-        }
-    }
-} 
+}
 
 Domain.typesValidator = Joi
 

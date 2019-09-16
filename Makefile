@@ -1,4 +1,4 @@
-args = ''
+args =
 gotoSource = cd source
 
 .PHONY: cli
@@ -7,15 +7,15 @@ cli:
 
 .PHONY: cli/test
 cli/test:
-	make npm args='run cli domain=user action=create login=abc password=123'
+	make npm args='run cli domain=user action=create login=abc password=123 $(args)'
 
 .PHONY: cli/test/error
 cli/test/error:
-	make npm args='run cli domain=user action=create login=ac'
+	make npm args='run cli domain=user action=create login=ac $(args)'
 
 .PHONY: cli/watch
 cli/watch:
-	make npm args='run dev'
+	make npm args='run cli:watch $(args)'
 
 .PHONY: dev
 dev:
@@ -23,7 +23,7 @@ dev:
 
 .PHONY: http
 http:
-	make npm args='run dev mode=http'
+	make npm args='run dev mode=http $(args)'
 
 .PHONY: http/test
 http/test:
@@ -35,7 +35,7 @@ http/test/error:
 
 .PHONY: install
 install:
-	make npm args='install'
+	make npm args='install $(args)'
 
 .PHONY: npm
 npm:

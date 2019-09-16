@@ -12,7 +12,7 @@ const setAttributesValuesToInstance = ({ instance, attributeName, value }) => {
     return instance
 }
 
-const validateValueAgainstValidation = ({ attributeName, value, validation }) => {
+const validateValueAgainstRules = ({ attributeName, value, validation }) => {
     try {
         return Joi.assert(value, validation)
     } catch ({ message }) {
@@ -27,7 +27,7 @@ const Domain = function (nameSpace, mapAttribuesToValidations) {
         forEachPropertyOfObject(mapAttribuesToValidations, attributeName => {
             let { validation } = mapAttribuesToValidations[attributeName]
             let value = values[attributeName]
-            validateValueAgainstValidation({ attributeName, value, validation })
+            validateValueAgainstRules({ attributeName, value, validation })
             setAttributesValuesToInstance({ instance, attributeName, value })
         })
 

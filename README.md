@@ -64,18 +64,18 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 
 - Interfaces
   - [x] HTTP
-  - [x] CLIT
+  - [x] CLI
   - [ ] Lambda
 
 - Persistences
-  - [x] Sequelize
-  - [x] SQLite Memory
+  - [x] [Sequelize](https://sequelize.org/)
+  - [x] [SQLite Memory](https://www.sqlite.org/inmemorydb.html)
   - [ ] Main class refactory
   - [ ] Postgres
   - [ ] File
 
 - Domains
-   - [x] Validations with Joi
+   - [x] Validations with [Joi](https://github.com/hapijs/joi)
    - [ ] Wrap Joi
    - [ ] Wrap Sequelize
 
@@ -88,10 +88,11 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] Docker compose
     - [ ] Postgres
     - [ ] Redis
-  - [ ] Push to hub
+  - [ ] Push to Docker Hub
  
  - CI/CD
    - [ ] Circle CI
+     - [ ] Badge
    - [ ] Version generation
      - [ ] Diff log
      

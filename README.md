@@ -91,17 +91,17 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
      - [ ] Diff log
      
 - Code templates
- - [ ] Code template library
- - [ ] Domains and tests
- - [ ] Controllers and tests
- - [ ] Interfaces and tests
+  - [ ] Code template library
+  - [ ] Domains and tests
+  - [ ] Controllers and tests
+  - [ ] Interfaces and tests
  
 - [ ] Logs
 
 - Documentation
- - [ ] Links
- - [ ] Layers structure
- - [ ] Technologies
+  - [ ] Links
+  - [ ] Layers structure
+  - [ ] Technologies
 
 ## Instalation
 

@@ -53,7 +53,11 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] Implement suite
   - [ ] Unit tests
   - [ ] [Integrated tests](https://www.quora.com/What-is-the-difference-between-integration-tests-and-integrated-tests)
-  
+
+- Debugger
+   - [ ] Local
+   - [ ] Inside Docker
+
 - Security
   - [x] Use [Helmet](https://helmetjs.github.io/)
   - [ ] Sensitive information

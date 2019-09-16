@@ -3,11 +3,7 @@ import { ExpectedError, EXPECTED_ERROR_CODE_ENUM } from '../../common/ExpectedEr
 import { forEachPropertyOfObject } from '../../common/Utils'
 import { registerModel } from '../../persistence'
 
-class DomainError extends ExpectedError {
-    constructor(message, details) {
-        super('DOMAIN_ERROR', message, details)
-    }
-}
+class DomainError extends ExpectedError {}
 
 const setAttributesValuesToInstance = ({ instance, attributeName, value }) => {
     instance [attributeName] = (value === undefined

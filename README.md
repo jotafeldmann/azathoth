@@ -132,3 +132,7 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 
 - [Clean Code](https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), by Uncle Bob
 - [Onion architecture](https://www.codeguru.com/csharp/csharp/cs_misc/designtechniques/understanding-onion-architecture.html)
+- [SOLID](https://en.wikipedia.org/wiki/SOLID)
+- [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
+- [YAGNI](https://pt.wikipedia.org/wiki/YAGNI)
+- [KISS](https://en.wikipedia.org/wiki/KISS_principle)

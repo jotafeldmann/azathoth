@@ -55,6 +55,7 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] [Integrated tests](https://www.quora.com/What-is-the-difference-between-integration-tests-and-integrated-tests)
 
 - Debugger
+   - [ ] From VS Code
    - [ ] Local
    - [ ] Inside Docker
 

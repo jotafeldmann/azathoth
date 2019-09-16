@@ -87,7 +87,7 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 
 ## How to use
 
-- Check the Makefile for tasks
+- [Check the Makefile for tasks](https://github.com/jotafeldmann/lovecraft/blob/master/Makefile)
 
 - Check interfaces
   - [HTTP](./source/app/interfaces/http/README.md)

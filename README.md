@@ -55,7 +55,7 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] [Integrated tests](https://www.quora.com/What-is-the-difference-between-integration-tests-and-integrated-tests)
   
 - Security
-  - [x] Use Helmet
+  - [x] Use [Helmet](https://helmetjs.github.io/)
   - [ ] Sensitive information
   - [ ] Auth tests
 
@@ -103,6 +103,11 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] Interfaces and tests
  
 - [ ] Logs
+
+- Performance
+   - [ ] Stress test
+   - [ ] APM
+   - [ ] Dashboard
 
 - Documentation
   - [ ] Links

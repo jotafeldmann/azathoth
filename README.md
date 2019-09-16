@@ -7,7 +7,18 @@ This is my **personal project** to **research about project patterns in Node.js*
 
 Is a pun with `love to craft` code and my favorite author [H.P. Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft).
 
-The first goal: create an API to enable system users to upload and retrieve images securely provided that they are authenticated.
+## Goals
+
+### As application
+
+Create an API to enable system users to upload and retrieve images securely provided that they are authenticated.
+
+### As project and research
+
+- **Independent of Frameworks**: The architecture does not depend on the existence of some library of feature laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their limited constraints.
+- **Testable**: The business rules can be tested without the UI, Database, Web Server, or any other external element. Independent of UI. The UI can change easily, without changing the rest of the system. A Web UI could be replaced with a console UI, for example, without changing the business rules.
+- **Independent of Database**: You can swap out Oracle or SQL Server, for Mongo, BigTable, CouchDB, or something else. Your business rules are not bound to the database.
+- **Independent of any external agency**: business rules simply don’t know anything at all about the outside world.
 
 ## Disclaimer
 
@@ -72,6 +83,12 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
    - [ ] Circle CI
    - [ ] Version generation
      - [ ] Diff log
+     
+- Code templates
+ - [ ] Code template library
+ - [ ] Domains
+ - [ ] Controllers
+ - [ ] Interfaces
 
 ## Instalation
 
@@ -97,3 +114,8 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 ## Improvements
 
 - Use a [TLS termination proxy on DMZ](https://en.wikipedia.org/wiki/TLS_termination_proxy) (maybe Nginx) due to Node.js and HTTPS/TLS crypto performance issues
+
+## References
+
+- [Clean Code](https://www.amazon.com.br/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882), by Uncle Bob
+- [Onion architecture](https://www.codeguru.com/csharp/csharp/cs_misc/designtechniques/understanding-onion-architecture.html)

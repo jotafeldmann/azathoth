@@ -16,14 +16,14 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 ## Endpoints
 
 -  [ ] Users API: register and login endpoints
-  - [x] Create
-  - [ ] Retrieve
-  - [ ] Update
-  - [ ] Delete
+   - [x] Create
+   - [ ] Retrieve
+   - [ ] Update
+   - [ ] Delete
 -  [ ] Upload Image API: upload and retrieve endpoints
 -  [ ] Auth
-  - [ ] Login
-  - [ ] Logout
+   - [ ] Login
+   - [ ] Logout
 
 ## TODO
 

@@ -59,18 +59,20 @@ const initializePersistence = async () => {
     await persistenceInstance.sync({ force:true })
 }
 
-export const init = () => {
+export const init = () => new Promise((resolve, reject) => {
     if (isModuleInitialized()) return false
+    
     persistenceInstance = new Sequelize('database', 'username', 'password', {
         dialect: 'sqlite',
         storage: ':memory:',
     })
-    
-    initializePersistence()
-    initializeModels()
+
     initialized = true
-    return testConnection()
-}
+    resolve()
+})
+.then(() => initializePersistence())
+.then(() => initializeModels())
+.then(() => testConnection())
 
 export const save = ({ modelWithData, howToSave }) => {
     if (!isModuleInitialized()) throw new PersistenceError('Persistence not initialized')

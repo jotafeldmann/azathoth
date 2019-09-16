@@ -3,7 +3,7 @@ gotoSource = cd source
 
 .PHONY: cli
 cli:
-	make npm args='run cli'
+	make npm args='run cli $(args)'
 
 .PHONY: cli/test
 cli/test:

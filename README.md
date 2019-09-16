@@ -3,7 +3,9 @@
 | <img src="docs/lovecraft.png" alt="Lovecraft" height="200" style="display: inline"/> | <i>"That is not dead which can eternal lie,</i> <br> and with strange aeons even death may die" <br><br> Abdul Alhazred, "The Nameless City" (1921) |
 | - | - |
 
-This is my personal project to research about project patterns in Node.js <br> I really appreciate Lovecraft Cthulhu mythos and all the texts from the author.
+This is my **personal project** to **research about project patterns in Node.js**
+
+Is a pun with `love to craft` code and my favorite author [H.P. Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft).
 
 The first goal: create an API to enable system users to upload and retrieve images securely provided that they are authenticated.
 

@@ -24,7 +24,17 @@ Create an API to enable system users to upload and retrieve images securely prov
 
 This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Overengineering).
 
-## Endpoints
+## Guidelines
+
+- Detach domain from controller
+- Error handler: there's only one success flow, so otherwise, throw errors
+- Code oriented to IDE (mainly [VS Code](https://code.visualstudio.com/)) autocompletion and IntelliSense
+- Dependency injection
+  - Please, tests without `rewire`
+  - Tests looking only to the function signature
+- Async it all
+
+## Services
 
 -  [ ] Users API: register and login endpoints
    - [x] Create
@@ -35,16 +45,6 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 -  [ ] Auth
    - [ ] Login
    - [ ] Logout
-
-## Guidelines
-
-- Detach domain from controller
-- Error handler
-- Code oriented to IDE (mainly [VS Code](https://code.visualstudio.com/)) autocompletion and IntelliSense
-- Dependency injection
-  - Please, tests without `rewire`
-  - Tests looking only to the function signature
-- Async it all
 
 ## TODO
 

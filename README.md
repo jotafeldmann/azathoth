@@ -95,6 +95,13 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
  - [ ] Domains and tests
  - [ ] Controllers and tests
  - [ ] Interfaces and tests
+ 
+- [ ] Logs
+
+- Documentation
+ - [ ] Links
+ - [ ] Layers structure
+ - [ ] Technologies
 
 ## Instalation
 

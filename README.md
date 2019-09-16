@@ -1,6 +1,6 @@
 # Lovecraft
 
-| <img src="docs/lovecraft.png" alt="Lovecraft" height="200" style="display: inline"/> | <i>"That is not dead which can eternal lie,</i> <br> and with strange aeons even death may die" <br><br> Abdul Alhazred, "The Nameless City" (1921) |
+| <img src="docs/lovecraft.png" alt="Lovecraft" width="300" style="display: inline"/> | <i>"That is not dead which can eternal lie,</i> <br> and with strange aeons even death may die" <br><br> Abdul Alhazred, "The Nameless City" (1921) |
 | - | - |
 
 This is my **personal project** to **research about project patterns in Node.js**

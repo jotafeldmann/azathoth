@@ -73,7 +73,12 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
   - [ ] Main class refactory
   - [ ] Postgres
   - [ ] File
- 
+
+- Domains
+   - [x] Validations with Joi
+   - [ ] Wrap Joi
+   - [ ] Wrap Sequelize
+
 - Profiles
   - [ ] PROD
   - [ ] Dev

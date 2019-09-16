@@ -36,11 +36,17 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
    - [ ] Login
    - [ ] Logout
 
-## TODO
+## Guidelines
 
-- [x] Detach domain from controller
-- [x] Error handler
-- [ ] Async it all
+- Detach domain from controller
+- Error handler
+- Code oriented to IDE (mainly [VS Code](https://code.visualstudio.com/)) autocompletion and IntelliSense
+- Dependency injection
+  - Please, tests without `rewire`
+  - Tests looking only to the function signature
+- Async it all
+
+## TODO
 
 - Tests
   - [ ] Aplly TDD
@@ -86,9 +92,9 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
      
 - Code templates
  - [ ] Code template library
- - [ ] Domains
- - [ ] Controllers
- - [ ] Interfaces
+ - [ ] Domains and tests
+ - [ ] Controllers and tests
+ - [ ] Interfaces and tests
 
 ## Instalation
 

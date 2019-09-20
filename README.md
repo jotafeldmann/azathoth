@@ -1,11 +1,11 @@
-# Lovecraft
+# Azathoth
 
-| <img src="docs/lovecraft.png" alt="Lovecraft" width="300" style="display: inline"/> | <i>"That is not dead which can eternal lie,</i> <br> and with strange aeons even death may die" <br><br> Abdul Alhazred, "The Nameless City" (1921) |
+| <img src="docs/azathoth.gif" alt="Azathoth" width="300" style="display: inline"/> | <i>"That is not dead which can eternal lie,</i> <br> and with strange aeons even death may die" <br><br> Abdul Alhazred, "The Nameless City" (1921) |
 | - | - |
 
 This is my **personal project** to **research about project patterns in Node.js**
 
-Is a pun with `love to craft` code and my favorite author [H.P. Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft).
+Azathoth is the greatest old one, from my favorite author [H.P. Lovecraft](https://en.wikipedia.org/wiki/H._P._Lovecraft).
 
 ## Goals
 
@@ -127,8 +127,8 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 
 - [Install GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Install NPM and Node](https://nodejs.org/en/download/)
-- [Clone the repo](https://help.github.com/en/articles/which-remote-url-should-i-use): `git clone https://github.com/jotafeldmann/lovecraft.git`
-- `cd lovecraft`
+- [Clone the repo](https://help.github.com/en/articles/which-remote-url-should-i-use): `git clone https://github.com/jotafeldmann/azathoth.git`
+- `cd azathoth`
 - `make install`
 
 ## How to dev
@@ -137,7 +137,7 @@ This project contains tons of [overengeering](https://en.wikipedia.org/wiki/Over
 
 ## How to use
 
-- [Check the Makefile for tasks](https://github.com/jotafeldmann/lovecraft/blob/master/Makefile)
+- [Check the Makefile for tasks](https://github.com/jotafeldmann/azathoth/blob/master/Makefile)
 
 - Check interfaces
   - [HTTP](./source/app/interfaces/http/README.md)
